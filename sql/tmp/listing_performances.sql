@@ -8,8 +8,8 @@ with performances as
         if(e.date_created is null, 0, e.no_of_whatsapp) as no_of_whatsapp,
         if(e.date_created is null, 0, e.no_of_total_enquiries) as no_of_total_enquiries,
     from         
-        tmp.page_clicks_per_day c full outer join
-        tmp.enquiries_per_day on e on e.date_created = c.date_created
+        `tmp.page_clicks_per_day` c full outer join
+        `tmp.enquiries_per_day` on e on e.date_created = c.date_created
 )
 
 select 
@@ -18,6 +18,6 @@ select
     h.description as hol_desc 
 from 
     performances p left join 
-    source.holidays h on p.date_created = h.date left join
-    source.listings_bump b on p.date_created = b.date_created
+    `source.holidays` h on p.date_created = h.date left join
+    `source.listings_bump` b on p.date_created = b.date_created
 

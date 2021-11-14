@@ -2,7 +2,7 @@ with clicks as
  (
     select * 
     from 
-        source.portal_hits
+        `source.portal_hits`
     where hits_type = "clicks"
 
  )
