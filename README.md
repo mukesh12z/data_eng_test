@@ -10,19 +10,19 @@ Thereafter, data in the source tables are cleaned, transformed, combined and sto
 
 In this test, you'll get a go at creating a part of this ELT data pipeline.
 
-## Test Brief
+## Assignment Brief
 
-In this test, you will create a program to execute different SQL files in the correct order. You can write your program in any language but note that we use mostly Python and Java in our stack.
+In this assignment, you will create a program to execute different SQL files in the correct order. You can write your program in any language but note that we use mostly Python and Java in our stack.
 
 __You are not allowed to use any specialized packages for this test. All functions and classes in this test should be written from scratch.__
 
 In the [sql](./sql) folder, you'll find 3 subfolders related to the steps detailed in our introduction of the ELT data pipeline:
 
-* [source](./source) contains the source tables in the data warehouse.
+* [source](./sql/source) contains the source tables in the data warehouse.
 
-* [tmp](./raw) contains SQL scripts used to clean, transform and combine the data in the data warehouse. You can assume that running a file in this folder will automatically create a table called `tmp.<file_basename>` in the data warehouse containing data from its sql logic.
+* [tmp](./sql/raw) contains SQL scripts used to clean, transform and combine the data in the data warehouse. You can assume that running a file in this folder will automatically create a table called `tmp.<file_basename>` in the data warehouse containing data from its sql logic.
 
-* [final](./final) contains SQL scripts used to create the final datamart. You can assume that running a file in this folder will automatically create a table called `final.<file_basename>` in the data warehouse containing data from its sql logic.
+* [final](./sql/final) contains SQL scripts used to create the final datamart. You can assume that running a file in this folder will automatically create a table called `final.<file_basename>` in the data warehouse containing data from its sql logic.
 
 Note that each SQL file contains some dependencies that may require running of some other SQL files beforehand. Hence, you are required to write a program which contains functions to:
 
@@ -36,7 +36,7 @@ Note that each SQL file contains some dependencies that may require running of s
 
 ## Deliverables
 
-1. Ensure that your project has clear instructions on how to run them. Do also give a brief explanation on what you've coded and the results and include the print/logs required by the Test Brief.
+1. Ensure that your project has clear instructions on how to run them. Do also give a brief explanation on what you've coded and the results and include the print/logs required by the Assignment Brief.
 
 2. We expect at least some unit tests, especially on critical functions of your codes.
 
