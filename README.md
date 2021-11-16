@@ -20,7 +20,7 @@ In the [sql](./sql) folder, you'll find 3 subfolders related to the steps detail
 
 * [source](./sql/source) contains the source tables in the data warehouse.
 
-* [tmp](./sql/raw) contains SQL scripts used to clean, transform and combine the data in the data warehouse. You can assume that running a file in this folder will automatically create a table called `tmp.<file_basename>` in the data warehouse containing data from its sql logic.
+* [tmp](./sql/tmp) contains SQL scripts used to clean, transform and combine the data in the data warehouse. You can assume that running a file in this folder will automatically create a table called `tmp.<file_basename>` in the data warehouse containing data from its sql logic.
 
 * [final](./sql/final) contains SQL scripts used to create the final datamart. You can assume that running a file in this folder will automatically create a table called `final.<file_basename>` in the data warehouse containing data from its sql logic.
 
