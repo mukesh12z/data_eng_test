@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Part of 99 Groups data engineers tasks are to ensure that data pipelines are run in the correct order and in the most timely and scalable fashion. One example of this is our ELT data pipeline.
+Part of 99 Groups data engineers tasks are to ensure that data pipelines are run in the correct order and in the most timely, reliable and scalable fashion. One example of this is our ELT data pipeline.
 
 In the ELT data pipeline, data from different tables in the application database are first ingested _as-is_ into its respective source tables in the data warehouse. 
 
@@ -20,9 +20,9 @@ In the [sql](./sql) folder, you'll find 3 subfolders related to the steps detail
 
 * [source](./sql/source) contains the source tables in the data warehouse.
 
-* [tmp](./sql/tmp) contains SQL scripts used to clean, transform and combine the data in the data warehouse. You can assume that running a file in this folder will automatically create a table called `tmp.<file_basename>` in the data warehouse containing data from its sql logic.
+* [tmp](./sql/tmp) contains SQL scripts used to clean, transform and combine the data in the data warehouse. You can assume that running a file in this folder will automatically create a table called `tmp.<sqlfile_basename>` in the data warehouse containing data from its sql logic.
 
-* [final](./sql/final) contains SQL scripts used to create the final datamart. You can assume that running a file in this folder will automatically create a table called `final.<file_basename>` in the data warehouse containing data from its sql logic.
+* [final](./sql/final) contains SQL scripts used to create the final datamart. You can assume that running a file in this folder will automatically create a table called `final.<sqlfile_basename>` in the data warehouse containing data from its sql logic.
 
 Note that each SQL file contains some dependencies that may require running of some other SQL files beforehand. Hence, you are required to write a program which contains functions to:
 
