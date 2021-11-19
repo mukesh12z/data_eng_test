@@ -1,4 +1,5 @@
 import logging
+import psycopg2 
 
 logger = logging.getLogger('server_logger')
 logger.setLevel(logging.DEBUG)
@@ -9,3 +10,7 @@ formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datef
 fh.setFormatter(formatter)
 # add the handlers to logger
 logger.addHandler(fh)
+
+# postgres configuration
+conn = psycopg2.connect(user="postgres", password="admin", host="127.0.0.1", port="5432", database="postgres")
+cursor = conn.cursor()

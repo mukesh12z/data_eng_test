@@ -1,13 +1,10 @@
 from pathlib import Path, PurePath
 import re
 import os
-import psycopg2 
+import time
 import asyncio
-from config import logger
+from config import logger, conn, cursor
 
-# postgres configuration
-conn = psycopg2.connect(user="postgres", password="admin", host="127.0.0.1", port="5432", database="postgres")
-cursor = conn.cursor()
 
 #Search for tmp.* tables in script to determine dependency
 def find_word(f,file_content, to_search):
@@ -45,6 +42,7 @@ def prepare_dictionaries(dict_dependency, dependent_dict, independent_dict):
 #execute sql in files which can be run independently and asyncronously
 async def process_independent_sql(path, independent_dict):
     
+    logger.info('running independent sql')
     for k,v in independent_dict.items():
         k = os.path.join(path,k)
         try:
@@ -57,11 +55,15 @@ async def process_independent_sql(path, independent_dict):
 
 async def run_independent_sql(cursor, sql, path):
     
-    cursor.execute(sql)
+    logger.info('independent sql async run')
+    #commenting below part as actual sql need not run
+    #cursor.execute(sql)
     await asyncio.sleep(2)
 
 #execute sql in files which should be run syncronously 
 def process_dependent_sql(path, dependent_dict):
+    
+    logger.info('running dependent sql')
     
     for k,v in dependent_dict.items():
         k = os.path.join(path,k)
@@ -74,8 +76,12 @@ def process_dependent_sql(path, dependent_dict):
             logger.error(e)
 
 def run_dependent_sql(cursor, sql):
-
-    cursor.execute(sql)
+    
+    logger.info('dependent sql sync run')
+    
+    #commenting below part as actual sql need not run
+    #cursor.execute(sql)
+    time.sleep(2)
     
 async def main():
 
