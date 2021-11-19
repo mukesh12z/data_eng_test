@@ -3,7 +3,6 @@ from run import prepare_data, run_independent_sql
 import os
 import pathlib
 from config import logger
-import asyncio
 import pytest
 from config import cursor
 
