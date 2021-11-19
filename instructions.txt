@@ -1,0 +1,11 @@
+to run script -in main folder run below command
+
+python run.py
+
+to run test- in main folder run below command
+
+pytest
+
+
+Note: since the sql files are not dml commands so running them will not create any tables hence the sql part of script will not work. Sql files should be changed to create tables.
+
