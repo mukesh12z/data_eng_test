@@ -1,8 +1,10 @@
-to run script -in main folder run below command
+This script runs in python 3.6 and will not work in > 3.6 versions.
+
+to run script -in main folder run below command:
 
 python run.py
 
-to run test- in main folder run below command
+to run test- in main folder run below command:
 
 pytest
 
